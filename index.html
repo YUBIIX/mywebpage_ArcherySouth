@@ -2,6 +2,29 @@
 <html>
     <head>
         <title>ArcherySouth</title>
+        <style>
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+        <style>
+            body {
+                width: 1040.8px; 
+                height: 600px; 
+                margin: 0 auto; 
+            }
+        </style>
+        <style>
+            body {
+                background-color: #FFCEA9; 
+            }
+            .custom-div {
+                background-color: #3498db; 
+                color: white;
+                padding: 20px;
+            }
+        </style>
     </head>
   <div align="right"><div class="site-header--text-links">          
         <a href="https://www.facebook.com/profile.php?id=100009592509735&locale=th_TH">
@@ -9,17 +32,82 @@
         </a>
   </div>
 </div>
+<style>
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #FFCEA9;
+        color: white;
+        padding: 10px;
+    }
+
+    .search-bar {
+        text-align: right;
+    }
+
+    .search-bar input[type="search"] {
+        padding: 8px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
 <body>
-    <div align=" right"><form action="/a/search" method="get" class="search-bar" role="search">
-        <input type="hidden" name="type" value="product">
-        <input type="search" name="q" value="" placeholder="ค้นหาสินค้าทั้งหมด..." aria-label="ค้นหาสินค้าทั้งหมด...">
-        <button type="submit" class="search-bar--submit icon-fallback-text">
-          <span class="icon icon-search" aria-hidden="true"></span>
-          <span class="img">ค้นหา</span>
-        </button>
-      </form>
-    </div>
-    <img src="LOGO.png"width="300px" height="130px">
+    <header>
+        <img src="LOGO.png" width="330px" height="150px">
+        <style>
+            .search-bar {
+                display: flex;
+                align-items: center;
+            }
+        
+            .search-bar form {
+                display: flex;
+                align-items: center;
+            }
+        
+            .search-bar input[type="search"] {
+                padding: 8px;
+                margin-right: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+        
+            .search-bar--submit,
+            .search-bar--cart {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                border: none; 
+                background: none; 
+                margin-left: 10px; 
+        
+            .icon {
+                width: 20px;
+                height: 20px; 
+                margin-right: 5px; 
+            }
+        </style>
+        
+        <div class="search-bar">
+            <form action="/a/search" method="get" class="search-bar" role="search">
+                <input type="hidden" name="type" value="product">
+                <input type="search" name="q" value="" placeholder="ค้นหาสินค้าทั้งหมด..." aria-label="ค้นหาสินค้าทั้งหมด">
+                <button type="submit" class="search-bar--submit icon-fallback-text">
+                    <img src="vector.png" alt="Search" class="icon">
+                    <span class="img"></span>
+                </button>
+                <button class="search-bar--cart">
+                    <img src="cart.png" alt="Cart" class="icon">
+                    <span class="img"></span>
+                </button>
+            </form>
+        </div>
+    </header>
 </body>
     <style>
         ul {
@@ -27,7 +115,8 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #FA1700;
+            background-color: #FA1700; 
+            width: 100%;
         }
 
         li {
@@ -48,15 +137,60 @@
     </style>
 <body>
     <div class="center-container">
+
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">โรงเรียนสอนยิงธนู</a></li>
-            <li><a href="#services">คันธนู(BOWS)</a></li>
+            <li><a href="#coontact">คันธนู(BOWS)</a></li>
             <li><a href="#contact">ลูกธนู(ARROWS)</a></li>
             <li><a href="#contact">อุปกรณ์คันธนู(BOWS ACCESSORIES)</a></li>
             <li><a href="#contact">อื่นๆ</a></li>
         </ul>
     </div>
-
+    
 </body>
+<body>
+    <div style="position: relative;">
+        <img id="slideshow" src="image1.png" alt="Image 1">
+        <button id="PreviousButton" style="position: absolute; top: 50%; right: 0; display: none;" onclick="PreviousImage()"></button>
+        <button id="nextButton" style="position: absolute; top: 50%; right: 0; display: none;" onclick="nextImage()"></button>
+    </div>
+
+    <script>
+        var images = ["image1.png", "image2.png", "image3.png"];
+        var currentIndex = 0;
+        var slideshow = document.getElementById("slideshow");
+        var nextButton = document.getElementById("nextButton");
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            slideshow.src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            slideshow.src = images[currentIndex];
+        }
+
+        function showNextButton() {
+            nextButton.style.display = "block";
+        }
+
+        function hideNextButton() {
+            nextButton.style.display = "none";
+        }
+
+        slideshow.addEventListener("click", function(event) {
+            var x = event.clientX - slideshow.getBoundingClientRect().left;
+            if (x < slideshow.width / 2) {
+                prevImage(); 
+                nextImage(); 
+            }
+        });
+
+        slideshow.addEventListener("mouseover", showNextButton);
+        slideshow.addEventListener("mouseout", hideNextButton);
+    </script>
+</body>
+
 </html>

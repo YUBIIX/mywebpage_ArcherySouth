@@ -180,14 +180,12 @@
         function hideNextButton() {
             nextButton.style.display = "none";
         }
-
-        // Add event listeners to the left and right sides of the image
         slideshow.addEventListener("click", function(event) {
             var x = event.clientX - slideshow.getBoundingClientRect().left;
             if (x < slideshow.width / 2) {
-                prevImage(); // Clicked on the left side
+                prevImage();
             } else {
-                nextImage(); // Clicked on the right side
+                nextImage();
             }
         });
 

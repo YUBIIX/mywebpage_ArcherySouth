@@ -141,6 +141,7 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">โรงเรียนสอนยิงธนู</a></li>
+            <li><a href="#about">สนามยิงธนู</a></li>
             <li><a href="#coontact">คันธนู(BOWS)</a></li>
             <li><a href="#contact">ลูกธนู(ARROWS)</a></li>
             <li><a href="#contact">อุปกรณ์คันธนู(BOWS ACCESSORIES)</a></li>
@@ -180,11 +181,13 @@
             nextButton.style.display = "none";
         }
 
+        // Add event listeners to the left and right sides of the image
         slideshow.addEventListener("click", function(event) {
             var x = event.clientX - slideshow.getBoundingClientRect().left;
             if (x < slideshow.width / 2) {
-                prevImage(); 
-                nextImage(); 
+                prevImage(); // Clicked on the left side
+            } else {
+                nextImage(); // Clicked on the right side
             }
         });
 

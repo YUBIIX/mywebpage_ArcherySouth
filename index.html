@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Rodee Waemalong">
+        <meta name="description" content="ArcherySouth It is a website about selling bows and archery
+        equipment and teaching archery..">
+        <meta name="keywords" content="archery, bows, arrows, sports, training">
         <title>ArcherySouth</title>
         <style>
             img {
@@ -11,7 +17,7 @@
         <style>
             body {
                 width: 1040.8px; 
-                height: 600px; 
+                height: 1000px; 
                 margin: 0 auto; 
             }
         </style>
@@ -26,12 +32,17 @@
             }
         </style>
     </head>
-  <div align="right"><div class="site-header--text-links">          
-        <a href="https://www.facebook.com/profile.php?id=100009592509735&locale=th_TH">
-        <p>Facebook : ArcherySouth , Tel. 098-088-5800 , Line ID : @archerysouth</p>     
-        </a>
-  </div>
-</div>
+    <div align="right">
+        <div class="site-header--text-links">
+            <a href="https://web.facebook.com/profile.php?id=100009592509735&locale=th_TH" target="_blank">
+                <p style="display: inline;">Facebook : ArcherySouth</p>
+            </a>
+            <a href="https://line.me/ti/p/AQ54CfL0Ey" target="_blank" style="margin-left: 10px;">
+                <p style="display: inline;">Line ID : @archerysouth</p>
+            </a>
+            <p style="display: inline;">Tel. 098-088-5800</p>
+        </div>
+    </div>
 <style>
     
     header {
@@ -180,12 +191,14 @@
         function hideNextButton() {
             nextButton.style.display = "none";
         }
+
+        
         slideshow.addEventListener("click", function(event) {
             var x = event.clientX - slideshow.getBoundingClientRect().left;
             if (x < slideshow.width / 2) {
-                prevImage();
+                prevImage(); 
             } else {
-                nextImage();
+                nextImage(); 
             }
         });
 
